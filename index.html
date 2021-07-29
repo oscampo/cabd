@@ -34,7 +34,7 @@ function myFunction() {
   var x = document.getElementById("myNumber").value;
   var str = "Esta es tu tarea, usa una escala de 1 cuadro = 10 mm!";
   const cod = math.matrix([
-    ["2176635"],
+    [2176635],
     [2156994],
     [2160968],
     [2175488],
@@ -74,8 +74,7 @@ function myFunction() {
     [2180452],
     [2190490],
     [2171159],
-    [2216266]]
-  );
+    [2216266]]);
 
   const links=math.matrix([
   ["https://drive.google.com/open?id=0B4Gs76AnsrJjTmh0YzdMb0U5ZTQ"],
@@ -129,7 +128,7 @@ function myFunction() {
   ["https://drive.google.com/open?id=0B4Gs76AnsrJjOFc3TGxfM1N4R0U"],
   ["https://drive.google.com/open?id=0B4Gs76AnsrJjOUJZZDhuZnZJbXc"]]);
 
-if (x == cod.get([0])) {
+if (x == cod.get([0,0])) {
   var result = str.link(links.get([0]));
 }
 else if (x == 2156994) {
