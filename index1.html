@@ -1,0 +1,254 @@
+<!DOCTYPE html PUBLIC"-//W3C//DTD XHTML 1.0 Strict//SP"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+
+  <script src="https://unpkg.com/mathjs@9.4.4/lib/browser/math.js"></script>
+  <title>Computer Aided Biomechanical Design</title>
+</head>
+
+<body>
+
+<h2>Diseño Biomecánico Asistido por Computador</h2>
+<h3>Asignación de Tareas Primera Semana </h3>
+<p> Prof. Oscar Campo, PhD</p>
+
+
+<p> 1. Haz un video (o videos), con audio, describiendo tu proceso de modelación en solidworks, de la pieza asignada usando el menor número de operaciones posible.</p>
+<p> 2. Sube a youtube tu video (como video no listado). Usa tu cuenta UAO en lugar de tu cuenta personal</p>
+<p> 3. Entrega tu tarea subiendo un solo archivo comprimido que contenga el archivo de tus piezas de SolidWorks y el link de tu video (o videos)</p>
+
+<p>Ingresa tu código y haz click en el botón para obtener tu tarea.</p>
+
+<input type="number" id="myNumber"  placeholder="Ingresa tu código...">
+<button onclick="myFunction()">Cuál es link de mi tarea?</button>
+
+<p id="tarea1"></p>
+
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myNumber").value;
+  var str = "Esta es tu tarea, usa una escala de 1 cuadro = 10 mm!";
+  const cod = math.matrix([
+    [2176635],
+    [2156994],
+    [2160968],
+    [2175488],
+    [2160622],
+    [2176173],
+    [2190492],
+    [2170314],
+    [2175250],
+    [2170515],
+    [2190494],
+    [2175557],
+    [2161477],
+    [2170864],
+    [2160748],
+    [2170763],
+    [2171723],
+    [2170762],
+    [2170220],
+    [2170324],
+    [2161385],
+    [2170759],
+    [2175058],
+    [2175060],
+    [2166685],
+    [2171868],
+    [2170642],
+    [2171337],
+    [2175886],
+    [2160291],
+    [2170339],
+    [2181742],
+    [2180311],
+    [2170761],
+    [2151235],
+    [2170221],
+    [2176411],
+    [2180452],
+    [2190490],
+    [2171159],
+    [2216266]]
+  );
+
+  const links=math.matrix([
+  ["https://drive.google.com/open?id=0B4Gs76AnsrJjTmh0YzdMb0U5ZTQ"],
+  ["https://drive.google.com/open?id=0B4Gs76AnsrJjOUtRTFkwa3V2YzQ"],
+  ["https://drive.google.com/open?id=0B4Gs76AnsrJjNDVxNGNISlNNaGM"],
+  ["https://drive.google.com/open?id=0B4Gs76AnsrJjOVNvMWZVNEtMRGs"],
+  ["https://drive.google.com/open?id=0B4Gs76AnsrJjM1Q0TTFZRTk1MDQ"],
+  ["https://drive.google.com/open?id=0B4Gs76AnsrJjcS1jeFNRRS00N28"],
+  ["https://drive.google.com/open?id=0B4Gs76AnsrJjRkMwZl9naFl0MzA"],
+  ["https://drive.google.com/open?id=0B4Gs76AnsrJjcG5aU19zQlBOa3M"],
+  ["https://drive.google.com/open?id=0B4Gs76AnsrJjbnplT3BnbjVMQ0U"],
+  ["https://drive.google.com/open?id=0B4Gs76AnsrJjSTZ5cWxKc1hROGs"],
+  ["https://drive.google.com/open?id=0B4Gs76AnsrJjd1FBSHBjdDhCT00"],
+  ["https://drive.google.com/open?id=0B4Gs76AnsrJjLUV3V1ZleWE1NVk"],
+  ["https://drive.google.com/open?id=0B4Gs76AnsrJjd1lzUk9DblQzbWc"],
+  ["https://drive.google.com/open?id=0B4Gs76AnsrJjSlZWdnZDRmVqeFU"],
+  ["https://drive.google.com/open?id=0B4Gs76AnsrJjdl8zUkc0RHJoUTA"],
+  ["https://drive.google.com/open?id=0B4Gs76AnsrJjZTRmcnVCTkxSOUU"],
+  ["https://drive.google.com/open?id=0B4Gs76AnsrJjUlE4TzFfNXNRelU"],
+  ["https://drive.google.com/open?id=0B4Gs76AnsrJja0l4RVAxM24xQ00"],
+  ["https://drive.google.com/open?id=0B4Gs76AnsrJjYUU1bzVZM05Rb2s"],
+  ["https://drive.google.com/open?id=0B4Gs76AnsrJjcm5vTThJVmdDMXc"],
+  ["https://drive.google.com/open?id=0B4Gs76AnsrJjY2VzbThlZUtBbjA"],
+  ["https://drive.google.com/open?id=0B4Gs76AnsrJjWS1OdDZWNGhaSDg"],
+  ["https://drive.google.com/open?id=0B4Gs76AnsrJjSkN1VVBKbkc2dnM"],
+  ["https://drive.google.com/open?id=0B4Gs76AnsrJjN1lDMC01TW5DRjQ"],
+  ["https://drive.google.com/open?id=0B4Gs76AnsrJjU1hwYVZpVXlfZFU"],
+  ["https://drive.google.com/open?id=0B4Gs76AnsrJjd2ViaExRQTNIRnM"],
+  ["https://drive.google.com/open?id=0B4Gs76AnsrJjeTI3LWNUcU5uLWM"],
+  ["https://drive.google.com/open?id=0B4Gs76AnsrJjNlpPS1hXeXllZXc"],
+  ["https://drive.google.com/open?id=0B4Gs76AnsrJjb3owdllKTkpiVDA"],
+  ["https://drive.google.com/open?id=0B4Gs76AnsrJjaEpZWXRKUHhoeDQ"],
+  ["https://drive.google.com/open?id=0B4Gs76AnsrJjX3hXN2YwT0hLODg"],
+  ["https://drive.google.com/open?id=0B4Gs76AnsrJjQ1lQOFVPWlF4RlE"],
+  ["https://drive.google.com/open?id=0B4Gs76AnsrJjNDlNWExCMjB5bHM"],
+  ["https://drive.google.com/open?id=0B4Gs76AnsrJjYTZaLVN5emFVMnc"],
+  ["https://drive.google.com/open?id=0B4Gs76AnsrJjeEN3Q1Yzbmp5VWc"],
+  ["https://drive.google.com/open?id=0B4Gs76AnsrJjRFY0TE1TTWlCMDg"],
+  ["https://drive.google.com/open?id=0B4Gs76AnsrJjLTg0ODFKRWlBYU0"],
+  ["https://drive.google.com/open?id=0B4Gs76AnsrJjdXVoV0x5aEViR1U"],
+  ["https://drive.google.com/open?id=0B4Gs76AnsrJjQ2N0X0w2MEVZUjQ"],
+  ["https://drive.google.com/open?id=0B4Gs76AnsrJjWUhRRXQteExrc28"],
+  ["https://drive.google.com/open?id=0B4Gs76AnsrJjV2ZjTVVNUV9rVms"],
+  ["https://drive.google.com/open?id=0B4Gs76AnsrJjNHZraEJUcGFFRFE"],
+  ["https://drive.google.com/open?id=0B4Gs76AnsrJjWHBJQkRVWERSU28"],
+  ["https://drive.google.com/open?id=0B4Gs76AnsrJjM0dIVmFSdW1SalU"],
+  ["https://drive.google.com/open?id=0B4Gs76AnsrJjLTFFOFJvNXd0Nms"],
+  ["https://drive.google.com/open?id=0B4Gs76AnsrJjN0V5Q2lWZURBRE0"],
+  ["https://drive.google.com/open?id=0B4Gs76AnsrJjZmE4dFRuLVJLSjA"],
+  ["https://drive.google.com/open?id=0B4Gs76AnsrJjZ2VOUXdjR3A3MHM"],
+  ["https://drive.google.com/open?id=0B4Gs76AnsrJjOFc3TGxfM1N4R0U"],
+  ["https://drive.google.com/open?id=0B4Gs76AnsrJjOUJZZDhuZnZJbXc"]]);
+
+if (x == cod.get([0])) {
+  var result = str.link(links.get([0]));
+}
+else if (x == 2156994) {
+  var result = str.link(links.get([1]));
+}
+else if (x == 2160968) {
+  var result = str.link(links.get([2]));
+}
+else if (x == 2175488) {
+  var result = str.link(links.get([3]));
+}
+else if (x == 2160622) {
+  var result = str.link(links.get([4]));
+}
+else if (x == 2176173) {
+  var result = str.link(links.get([5]));
+}
+else if (x == 2190492) {
+  var result = str.link(links.get([6]));
+}
+else if (x == 2170314) {
+  var result = str.link(links.get([7]));
+}
+else if (x == 2175250) {
+  var result = str.link(links.get([8]));
+}
+else if (x == 2170515) {
+  var result = str.link(links.get([9]));
+}
+else if (x == 2190494) {
+  var result = str.link(links.get([10]));
+}
+else if (x == 2175557) {
+  var result = str.link(links.get([11]));
+}
+else if (x == 2161477) {
+  var result = str.link(links.get([12]));
+}
+else if (x == 2170864) {
+  var result = str.link(links.get([13]));
+}
+else if (x == 2160748) {
+  var result = str.link(links.get([14]));
+}
+else if (x == 2170763) {
+  var result = str.link(links.get([15]));
+}
+else if (x == 2171723) {
+  var result = str.link(links.get([16]));
+}
+else if (x == 2170762) {
+  var result = str.link(links.get([17]));
+}
+else if (x == 2170220) {
+  var result = str.link(links.get([18]));
+}
+else if (x == 2170324) {
+  var result = str.link(links.get([19]));
+}
+else if (x == 2161385) {
+  var result = str.link(links.get([20]));
+}
+else if (x == 2170759) {
+  var result = str.link(links.get([21]));
+}
+else if (x == 2175058) {
+  var result = str.link(links.get([22]));
+}
+else if (x == 2175060) {
+  var result = str.link(links.get([23]));
+}
+else if (x == 2166685) {
+  var result = str.link(links.get([24]));
+}
+else if (x == 2171868) {
+  var result = str.link(links.get([25]));
+}
+else if (x == 2170642) {
+  var result = str.link(links.get([26]));
+}
+else if (x == 2171337) {
+  var result = str.link(links.get([27]));
+}
+else if (x == 2175886) {
+  var result = str.link(links.get([28]));
+}
+else if (x == 2160291) {
+  var result = str.link(links.get([29]));
+}
+else if (x == 2170339) {
+  var result = str.link(links.get([30]));
+}
+else if (x == 2181742) {
+  var result = str.link(links.get([31]));
+}
+else if (x == 2180311) {
+  var result = str.link(links.get([32]));
+}
+else if (x == 2170761) {
+  var result = str.link(links.get([33]));
+}
+else {
+var str = "Tu código no ha sido encontrado, por favor haz click aquí para contactar a tu profesor"
+  var result = str.link("mailto:oicampo@uao.edu.co?subject=Mi%20código%20no%20stá%20inscrito%20en%20el%20curso%20CABD");
+}
+document.getElementById("tarea1").innerHTML = result;
+}
+</script>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<address>
+Written by <a href="mailto:oicampo@uao.edu.co">Prof. Oscar Campo, PhD</a>.<br>
+Universidad Autónoma de Occidente<br>
+Cali, Colombia<br>
+</address>
+
+</body>
+</html>
