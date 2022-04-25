@@ -1,7 +1,10 @@
 @font-face {
-  font-family: "Abacus";
-  src: url(http://oscampo.github.io/cabd/font/Abacus41h.otf) format("opentype");
+    font-family: 'abacus41h';
+    src: url('abacus41h-webfont.woff2') format('woff2'),
+         url('abacus41h-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
 }
 
-
-h5 { font-family: "Abacus", sans-serif }
+h5 { font-family: "abacus41h", sans-serif}
