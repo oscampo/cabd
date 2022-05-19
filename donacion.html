@@ -6,16 +6,50 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>donacion</title>
   <link rel="stylesheet" href="https://stackedit.io/style.css" />
+
+  <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+<script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+<py-env>
+        - requests
+        - clipboard
+        - bs4
+</py-env>
 </head>
 
 <body class="stackedit">
   <div class="stackedit__html"><h1 id="jornada-de-donación-de-sangre">JORNADA DE DONACIÓN DE SANGRE</h1>
 <h2 id="casa-sobre-la-roca-cali-21-de-mayo-de-2022">Casa Sobre la Roca Cali 21 de mayo de 2022</h2>
-<p>Elija un horario en el cual desea hacer su donación de sangre<br>
-<a href="https://docs.google.com/forms/d/e/1FAIpQLSdf0dbo8IBw_q6QhDYNPIlgy4sEhs6AOlVlV0powpG316CsDQ/viewform" target="_blank" rel="noopener noreferrer">8:00am</a><br>
-<a href="https://docs.google.com/forms/d/e/1FAIpQLSclIFW1y7g4AZ92C2fn5RjbgzBVn_dNSvk1cYpGlyZjHb4zMw/viewform" target="_blank" rel="noopener noreferrer">8:30am</a><br>
-<a href="https://docs.google.com/forms/d/e/1FAIpQLSfSPR1V0LWlZFUUTFqZSZtlGsgZkSf8vg0Lrg5rWiUIKPNVGg/viewform" target="_blank" rel="noopener noreferrer">9:00am</a><br>
-<a href="https://docs.google.com/forms/d/e/1FAIpQLSdI1Y3LFBfOfg6dncb-I87Z_xc4EYIhUnhyir9up1ltkWtdzQ/viewform" target="_blank" rel="noopener noreferrer">9:30am</a></p>
+<py-script>
+import requests
+import clipboard
+from bs4 import BeautifulSoup
+
+url = 'https://casaroca.org/devocionales/estudiemos-la-biblia/'
+response = requests.get(url)
+
+soup = BeautifulSoup(response.text, 'html.parser')
+headlines = soup.find('body').find_all('h4')
+unwanted = ['Categoría', 'Predicador','Libro bíblico o Tema','Rango de fechas']
+
+links =[]
+
+for x in list(dict.fromkeys(headlines)):
+    if x.text.strip() not in unwanted:
+        #print(x.text.strip())
+        links.append(x.text.strip())
+
+Today = url+links[0].lower()
+
+tildes = ['á','é','í','ó','ú','ü','ñ',' | ',' ']
+NoTildes = ['a','e','i','o','u','u','n','-','-']
+
+for i in range(9):
+		Today = Today.replace(tildes[i],NoTildes[i])
+
+clipboard.set(Today)
+print(Today)
+
+</py-script>
 </div>
 </body>
 
