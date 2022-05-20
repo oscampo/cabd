@@ -1,53 +1,17 @@
-﻿<!DOCTYPE html>
 <html>
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>donacion</title>
-  <link rel="stylesheet" href="https://stackedit.io/style.css" />
-
   <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
-<script defer src="https://pyscript.net/alpha/pyscript.js"></script>
-<py-env>
-        - requests
-        - bs4
-</py-env>
-</head>
+  <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+  <body>
+    Hello, world!
+    <div id="outputDiv" class="font-mono"></div>
+    <py-script>
+from js import XMLHttpRequest
 
-<body class="stackedit">
-  <div class="stackedit__html"><h1 id="jornada-de-donación-de-sangre">JORNADA DE DONACIÓN DE SANGRE</h1>
-<h2 id="casa-sobre-la-roca-cali-21-de-mayo-de-2022">Casa Sobre la Roca Cali 21 de mayo de 2022</h2>
-<py-script>
-import requests
-from bs4 import BeautifulSoup
+req = XMLHttpRequest.new()
+req.open("GET", "https://myexternalip.com/raw", False)
+req.send(None)
 
-url = 'https://casaroca.org/devocionales/estudiemos-la-biblia/'
-response = requests.get(url)
-
-soup = BeautifulSoup(response.text, 'html.parser')
-headlines = soup.find('body').find_all('h4')
-unwanted = ['Categoría', 'Predicador','Libro bíblico o Tema','Rango de fechas']
-
-links =[]
-
-for x in list(dict.fromkeys(headlines)):
-    if x.text.strip() not in unwanted:
-        #print(x.text.strip())
-        links.append(x.text.strip())
-
-Today = url+links[0].lower()
-
-tildes = ['á','é','í','ó','ú','ü','ñ',' | ',' ']
-NoTildes = ['a','e','i','o','u','u','n','-','-']
-
-for i in range(9):
-		Today = Today.replace(tildes[i],NoTildes[i])
-
-print(Today)
-
-</py-script>
-</div>
-</body>
-
+pyscript.write("outputDiv", str(req.response))
+    </py-script>
+  </body>
 </html>
