@@ -9,8 +9,11 @@
 </head>
 <body>
   <p>
-    Identificación : <label id='ID'></label> Ministerio : <label id='MIN'></label>
+    <b> Ministerio : <label id='MIN'></label></b>
   </p>
+    Identificación : <label id='NOMBRE'></label>  Documento de Identidad <label id='DOC_ID'></label>
+
+
   <py-env>
     - paths:
         - https://oscampo.github.io/cabd/data/people.csv
@@ -35,10 +38,12 @@ cursor = conn.execute("SELECT ID,MINISTERIO,NOMBRE,EDAD,DOC_ID,PHONE,T_CR,CURSOS
 for row in cursor.fetchall():
   pyscript.write('ID',row[0])
   pyscript.write('MIN',row[1])
-  print("ID = ", row[0]," MINISTERIO = ", row[1])
-  print("NOMBRE = ", row[2],"EDAD = ", row[3])
-  print("DOC_ID = ", row[4],"PHONE = ", row[5])
-  print("T_CR = ", row[6],"CURSOS = ", row[7],"\n")
+  pyscript.write('NOMBRE', row[2])
+  pyscript.write('EDAD', row[3])
+  pyscript.write('DOC_ID', row[4])
+  pyscript.write('PHONE', row[5])
+  pyscript.write('T_CR', row[6])
+  pyscript.write('CURSOS', row[7])
 
 conn.close()
   </py-script>
