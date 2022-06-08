@@ -12,6 +12,7 @@
     - paths:
         - https://oscampo.github.io/cabd/data/people.csv
         - https://oscampo.github.io/cabd/data/people.sqlite
+        - https://oscampo.github.io/cabd/data/people.db
   </py-env>
 <!--
   <py-script>
@@ -22,16 +23,17 @@ with open("people.csv") as file:
   <py-script>
 import sqlite3
 
-conn = sqlite3.connect('people.sqlite')
+conn = sqlite3.connect('people.db')
 <!-- with sqlite3.connect("people.sqlite") as connection:
     cursor = connection.cursor()
     cursor.execute("SELECT * FROM people")-->
-cursor = conn.execute("SELECT * from people")
+cursor = conn.execute("SELECT ID,MINISTERIO,NOMBRE,EDAD,DOC_ID,PHONE,T_CR,CURSOS from People")
+
 for row in cursor.fetchall():
-  print("Nombre", row[0], "Picture", row[1])
-  print("Altura", row[2], "Peso", row[3])
-  print("Género", row[4], "Fecha de Nacimiento", row[5])
-  print("Biografía", row[6], "\n")
+  print("ID = ", row[0]," MINISTERIO = ", row[1])
+  print("NOMBRE = ", row[2],"EDAD = ", row[3])
+  print("DOC_ID = ", row[4],"PHONE = ", row[5])
+  print("T_CR = ", row[6],"CURSOS = ", row[7],"\n")
 
 conn.close()
   </py-script>
