@@ -41,22 +41,13 @@
         - https://oscampo.github.io/cabd/data/people.csv
         - https://oscampo.github.io/cabd/data/people.sqlite
         - https://oscampo.github.io/cabd/data/people.db
+        - https://oscampo.github.io/cabd/data/fetchDB.py
   </py-env>
 <!--
-  <py-script>
-with open("people.csv") as file:
-    print(file.read())
-  </py-script>
--->
-  <py-script>
 import sqlite3
 
 conn = sqlite3.connect('people.db')
-<!-- with sqlite3.connect("people.sqlite") as connection:
-    cursor = connection.cursor()
-    cursor.execute("SELECT * FROM people")
-cursor = conn.execute("SELECT ID,MINISTERIO,NOMBRE,EDAD,DOC_ID,PHONE,T_CR,CURSOS from People")
--->
+
 cursor = conn.execute("SELECT * from People where MINISTERIO = 'Años Dorados'")
 
 test = cursor.fetchall()
@@ -71,6 +62,9 @@ for row in test:
   pyscript.write('CURSOS', row[7])
 
 conn.close()
+-->
+  <py-script src = "https://oscampo.github.io/cabd/data/fetchDB.py">
+ 
   </py-script>
 </body>
 </html>
