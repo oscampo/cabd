@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<h1>Casa Sobre la Roca</h1>
+<h2>Casa Sobre la Roca</h2>
 
 <table>
 	<thead>
@@ -57,7 +57,7 @@ conn = sqlite3.connect('people.db')
     cursor.execute("SELECT * FROM people")
 cursor = conn.execute("SELECT ID,MINISTERIO,NOMBRE,EDAD,DOC_ID,PHONE,T_CR,CURSOS from People")
 -->
-cursor = conn.execute("SELECT * from People where MINISTERIO = 'Alabanza'")
+cursor = conn.execute("SELECT * from People where MINISTERIO = 'Años Dorados'")
 
 test = cursor.fetchall()
 
