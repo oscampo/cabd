@@ -8,6 +8,7 @@
   <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
 </head>
 <body>
+
   <p>
     <b> Ministerio <label id='MIN'></label></b> | Solicitud No.: <label id='ID'></label></b>
   </p>
@@ -22,7 +23,31 @@
   </p>
 
 
-
+<table>
+	<thead>
+		<tr>
+			<th>Ministerio</th>
+			<th>Nombre Completo del Candidato</th>
+			<th>Edad</th>
+			<th>Documento de identidad </th>
+			<th>Teléfono</th>
+			<th>Tiempo en Casa Roca</th>
+			<th>Cursos/capacitaciones</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+      <td><label id='MINISTERIO'></label></td>
+      <td><label id='NOMBRE'></label></td>
+      <td><label id='EDAD'></label></td>
+      <td><label id='DOC_ID'></label></td>
+      <td><label id='PHONE'></label></td>
+      <td><label id='T_CR'></label></td>
+      <td><label id='CURSOS'></label></td>
+    </tr>
+	</tbody>
+</table>
+<label id='NOMBRE'></label>
   <py-env>
     - paths:
         - https://oscampo.github.io/cabd/data/people.csv
@@ -46,7 +71,9 @@ cursor = conn.execute("SELECT ID,MINISTERIO,NOMBRE,EDAD,DOC_ID,PHONE,T_CR,CURSOS
 -->
 cursor = conn.execute("SELECT * from People where MINISTERIO = 'Alabanza'")
 
-for row in cursor.fetchall():
+test = cursor.fetchall()
+
+for row in test:
   pyscript.write('ID',row[0])
   pyscript.write('MIN',row[1])
   pyscript.write('NOMBRE', row[2])
