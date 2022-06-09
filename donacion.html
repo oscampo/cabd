@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,73 +7,70 @@
   <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
   <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
 </head>
-
 <body>
 
-  <h1>Casa Sobre la Roca</h1>
-  <!---
-  <p>
-    Nombre : <label id='NOMBRE'></label> | Documento de Identidad: <label id='DOC_ID'></label>
-  </p>
-  <p>
-    Edad : <label id='EDAD'></label> | Teléfono: <label id='PHONE'></label>
-  </p>
-  <p>
-    Tiempo en CR : <label id='T_CR'></label> | Cursos: <label id='CURSOS'></label>
-  </p>
---->
+<h1>Casa Sobre la Roca</h1>
 
-  <table>
-    <thead>
-      <tr>
-        <th>Ministerio</th>
-        <th>Nombre Completo del Candidato</th>
-        <th>Edad</th>
-        <th>Documento de identidad </th>
-        <th>Teléfono</th>
-        <th>Tiempo en Casa Roca</th>
-        <th>Cursos/capacitaciones</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td id='MIN'></td>
-        <td id='NOMBRE'></td>
-        <td id='EDAD'></td>
-        <td id='DOC_ID'></td>
-        <td id='PHONE'></td>
-        <td id='T_CR'></td>
-        <td id='CURSOS'></td>
-      </tr>
-    </tbody>
-  </table>
+<table>
+	<thead>
+		<tr>
+			<th>Ministerio</th>
+			<th>Nombre Completo del Candidato</th>
+			<th>Edad</th>
+			<th>Documento de identidad </th>
+			<th>Teléfono</th>
+			<th>Tiempo en Casa Roca</th>
+			<th>Cursos/capacitaciones</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+      <td id='MIN'></td>
+      <td id='NOMBRE'></td>
+      <td><label id='EDAD'></label></td>
+      <td><label id='DOC_ID'></label></td>
+      <td><label id='PHONE'></label></td>
+      <td><label id='T_CR'></label></td>
+      <td><label id='CURSOS'></label></td>
+    </tr>
+	</tbody>
+</table>
+<label id='NOMBRE'></label>
   <py-env>
     - paths:
-    - https://oscampo.github.io/cabd/data/people.csv
-    - https://oscampo.github.io/cabd/data/people.sqlite
-    - https://oscampo.github.io/cabd/data/people.db
-
+        - https://oscampo.github.io/cabd/data/people.csv
+        - https://oscampo.github.io/cabd/data/people.sqlite
+        - https://oscampo.github.io/cabd/data/people.db
   </py-env>
-
+<!--
   <py-script>
-    import sqlite3
-
-    conn = sqlite3.connect('people.db')
-
-    cursor = conn.execute("SELECT * from People where MINISTERIO = 'Alabanza'")
-
-    for row in cursor.fetchall():
-      pyscript.write('MIN',row[1])
-      pyscript.write('NOMBRE', row[2])
-      pyscript.write('EDAD', row[3])
-      pyscript.write('DOC_ID', row[4])
-      pyscript.write('PHONE', row[5])
-      pyscript.write('T_CR', row[6])
-      pyscript.write('CURSOS', row[7])
-
-    conn.close()
+with open("people.csv") as file:
+    print(file.read())
   </py-script>
+-->
+  <py-script>
+import sqlite3
 
+conn = sqlite3.connect('people.db')
+<!-- with sqlite3.connect("people.sqlite") as connection:
+    cursor = connection.cursor()
+    cursor.execute("SELECT * FROM people")
+cursor = conn.execute("SELECT ID,MINISTERIO,NOMBRE,EDAD,DOC_ID,PHONE,T_CR,CURSOS from People")
+-->
+cursor = conn.execute("SELECT * from People where MINISTERIO = 'Alabanza'")
+
+test = cursor.fetchall()
+
+for row in test:
+  pyscript.write('MIN',row[1])
+  pyscript.write('NOMBRE', row[2])
+  pyscript.write('EDAD', row[3])
+  pyscript.write('DOC_ID', row[4])
+  pyscript.write('PHONE', row[5])
+  pyscript.write('T_CR', row[6])
+  pyscript.write('CURSOS', row[7])
+
+conn.close()
+  </py-script>
 </body>
-
 </html>
