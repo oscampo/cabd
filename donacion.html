@@ -43,7 +43,8 @@
         - https://oscampo.github.io/cabd/data/people.db
         - https://oscampo.github.io/cabd/data/fetchDB.py
   </py-env>
-<!--
+<py-script>
+
 import sqlite3
 
 conn = sqlite3.connect('people.db')
@@ -62,9 +63,7 @@ for row in test:
   pyscript.write('CURSOS', row[7])
 
 conn.close()
--->
-  <py-script src = "https://oscampo.github.io/cabd/data/fetchDB.py">
  
-  </py-script>
+   </py-script>
 </body>
 </html>
