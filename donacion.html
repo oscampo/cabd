@@ -44,27 +44,7 @@
         - https://oscampo.github.io/cabd/data/people.sqlite
         - https://oscampo.github.io/cabd/data/people.db
   </py-env>
-<py-script src="./data/fetchDB.py">
-<!---
-import sqlite3
-
-conn = sqlite3.connect('people.db')
-
-cursor = conn.execute("SELECT * from People where MINISTERIO = 'Años Dorados'")
-
-test = cursor.fetchall()
-
-for row in test:
-  pyscript.write('MIN',row[1])
-  pyscript.write('NOMBRE', row[2])
-  pyscript.write('EDAD', row[3])
-  pyscript.write('DOC_ID', row[4])
-  pyscript.write('PHONE', row[5])
-  pyscript.write('T_CR', row[6])
-  pyscript.write('CURSOS', row[7])
-
-conn.close()
---->  
-   </py-script>
+  <py-script src="./data/fetchDB.py"></py-script>
+  <py-script src="./data/LoveCalc.py"></py-script>
 </body>
 </html>
