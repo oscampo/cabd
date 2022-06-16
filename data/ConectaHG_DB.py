@@ -1,23 +1,16 @@
-import mysql.connector
-from mysql.connector import Error
+a_file = open("sample_file.json", "r")
 
-try:
-    connection = mysql.connector.connect(host='162.241.61.240',
-                                     database='iblicrca_aspirantes',
-                                         user='iblicrca_directores',
-                                         password='Nu3Vos5i3rVos')
-    if connection.is_connected():
-        db_Info = connection.get_server_info()
-        print("Connected to MySQL Server version ", db_Info)
-        cursor = connection.cursor()
-        cursor.execute("select database();")
-        record = cursor.fetchone()
-        print("You're connected to database: ", record)
+json_object = json.load(a_file)
 
-except Error as e:
-    print("Error while connecting to MySQL", e)
-finally:
-    if connection.is_connected():
-        cursor.close()
-        connection.close()
-        print("MySQL connection is closed")
+a_file.close()
+
+print(json_object)
+
+json_object["d"] = 100
+
+
+a_file = open("sample_file.json", "w")
+
+json.dump(json_object, a_file)
+
+a_file.close()
