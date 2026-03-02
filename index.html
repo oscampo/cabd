@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC"-//W3C//DTD XHTML 1.0 Strict//SP" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <meta content="utf-8" http-equiv="encoding" />
+
+    <script src="https://unpkg.com/mathjs@9.4.4/lib/browser/math.js"></script>
+    <title>Computer Aided Biomechanical Design</title>
+  </head>
+
+  <body>
+    <h2>Dibujo Asistido por Computador</h2>
+    <h3>Asignación del Primer Parcial</h3>
+    <p>Prof. Oscar Campo, PhD</p>
+
+    <p>
+      1. Modela como chapa metálica la pieza suministrada.
+    </p>
+    <p>
+      2. Genera el plano de la pieza mostrando 2 vistas principales y el desarrollo desplegado
+    </p>
+    <p>
+      3. Sube al campus virtual el archivo de la pieza (.sldprt) y el archivo del dibujo (.slddrw)
+    </p>
+
+    <p>Ingresa tu número de de documento de identidad y haz click en el botón para obtener tu parcial.</p>
+
+    <input type="text" id="myNumber" placeholder="Ingresa tu código..." />
+    <button onclick="myFunction()">Cuál es link de mi tarea?</button>
+
+    <p id="tarea1"></p>
+    <p id="tarea2"></p>
+
+    <script>
+      function myFunction() {
+        var x = document.getElementById("myNumber").value;
+        var str =
+          "Éste es el link a tu Parcial 1, la lámina debe ser de 1mm!";
+        var str2 =
+          "Éste es el link a tu tarea 2, usa una escala de 1 cuadro = 10 mm!";
+        const cod = math.matrix([
+          [1113779307],
+[1115548527],
+[1048069885],
+[1109117715],
+[1077721867],
+[1105368173],
+[1125081938],
+[1110368143],
+[1110289097],
+[1109667446],
+[1114542464],
+[1110292943],
+[1105369818],
+[1105368793],
+[1059239639],
+[1117018269],
+[1105371073],
+[1113978449],
+[1105371101],
+[1028483079],
+[1105370372],
+[1109544089]
+        ]);
+        <!--"https://drive.google.com/open?id=0B4Gs76AnsrJjTmh0YzdMb0U5ZTQ"-->
+
+        const links = math.matrix([
+          ["https://oscampo.github.io/cabd/pdfs/Parcial%2011.PDF"],
+          ["https://oscampo.github.io/cabd/pdfs/Parcial%2012.PDF"],
+          ["https://oscampo.github.io/cabd/pdfs/Parcial%2013.PDF"],
+          ["https://oscampo.github.io/cabd/pdfs/Parcial%2014.PDF"],
+          ["https://oscampo.github.io/cabd/pdfs/Parcial%2015.PDF"]
+        ]);
+
+        if (x == cod.get([0, 0])) {
+          var result1 = str.link(links.get([0, 0]));
+        } else if (x == cod.get([1, 0])) {
+          var result1 = str.link(links.get([1, 0]));
+        } else if (x == cod.get([2, 0])) {
+          var result1 = str.link(links.get([2, 0]));
+        } else if (x == cod.get([3, 0])) {
+          var result1 = str.link(links.get([3, 0]));
+        } else if (x == cod.get([4, 0])) {
+          var result1 = str.link(links.get([4, 0]));
+        } else if (x == cod.get([5, 0])) {
+          var result1 = str.link(links.get([0, 0]));
+        } else if (x == cod.get([6, 0])) {
+          var result1 = str.link(links.get([1, 0]));
+        } else if (x == cod.get([7, 0])) {
+          var result1 = str.link(links.get([2, 0]));
+        } else if (x == cod.get([8, 0])) {
+          var result1 = str.link(links.get([3, 0]));
+        } else if (x == cod.get([9, 0])) {
+          var result1 = str.link(links.get([4, 0]));
+        } else if (x == cod.get([10, 0])) {
+          var result1 = str.link(links.get([0, 0]));
+        } else if (x == cod.get([11, 0])) {
+          var result1 = str.link(links.get([1, 0]));
+        } else if (x == cod.get([12, 0])) {
+          var result1 = str.link(links.get([2, 0]));
+        } else if (x == cod.get([13, 0])) {
+          var result1 = str.link(links.get([3, 0]));
+        } else if (x == cod.get([14, 0])) {
+          var result1 = str.link(links.get([4, 0]));
+        } else if (x == cod.get([15, 0])) {
+          var result1 = str.link(links.get([0, 0]));
+        }
+          else if (x == cod.get([16, 0])) {
+          var result1 = str.link(links.get([1, 0]));
+        }
+else if (x == cod.get([17, 0])) {
+          var result1 = str.link(links.get([2, 0]));
+        }
+else if (x == cod.get([18, 0])) {
+          var result1 = str.link(links.get([3, 0]));
+        }
+else if (x == cod.get([19, 0])) {
+          var result1 = str.link(links.get([4, 0]));
+        }
+else if (x == cod.get([20, 0])) {
+          var result1 = str.link(links.get([0, 0]));
+        }
+else if (x == cod.get([21, 0])) {
+          var result1 = str.link(links.get([1, 0]));
+        }
+        
+        else {
+          var str = "Tu documento de identidad no ha sido encontrado, ";
+          var result1 = str.link(
+            "mailto:oicampo@uao.edu.co?subject=Mi%20código%20no%20stá%20inscrito%20en%20el%20curso%20CABD"
+          );
+
+        }
+
+        document.getElementById("tarea1").innerHTML = result1;
+      }
+    </script>
+    <br />
+    <br />
+
+    <a href="https://dissertation-writingservice.com/">.</a>
+    <script
+      type="text/javascript"
+      src="https://www.freevisitorcounters.com/auth.php?id=74d299ba76f1adb89eaf06a0a3487cdcb4fbfe80"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://www.freevisitorcounters.com/en/home/counter/914338/t/0"
+    ></script>
+    <br /><br />
+    <address>
+      Written by
+      <a href="mailto:oicampo@uao.edu.co">Prof. Oscar Campo, PhD</a>.<br />
+      Universidad Autónoma de Occidente<br />
+      Cali, Colombia<br />
+    </address>
+  </body>
+</html>
